@@ -1,25 +1,29 @@
-
 require 'yaml'
 
-def load_library
-  YAML.load_file('emoticons.yml')
+def load_library(path)
+  icons = YAML.load_file(path)
+  newHash = {'get_meaning' => {}, 'get_emoticon' => {}}
+  icons.each do |trans, emot|
+    newHash['get_meaning'][emot[1]] = trans
+    newHash['get_emoticon'][emot[0]] = emot[1]
+  end
+  newHash
 end
 
-def get_japanese_emoticon(emoticon)
-  load_library.each do |trans, emot|
-    if emot[0]==emoticon
-      return emot[1]
+def get_japanese_emoticon(file_path, emoticon)
+  load_library(file_path)['get_emoticon'].each do |eng, jap|
+    if eng == emoticon
+      return jap
     end
   end
-
+  return 'Sorry, that emoticon was not found'
 end
 
-def get_english_meaning(emoticon)
-  j=get_japanese_emoticon(emoticon)
-  load_library.each do |trans, emot|
-    if emot[1]==j
+def get_english_meaning(file_path, emot)
+  load_library(file_path)['get_meaning'].each do |pic,trans|
+    if emot ==  pic
       return trans
     end
   end
-
+  return 'Sorry, that emoticon was not found'
 end
