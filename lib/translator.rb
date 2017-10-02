@@ -1,5 +1,4 @@
 require "yaml"
-require "pry"
 
 # {"angel"=>["O:)", "☜(⌒▽⌒)☞"],
 # "angry"=>[">:(", "ヽ(ｏ`皿′ｏ)ﾉ"],
