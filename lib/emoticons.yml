@@ -22,8 +22,10 @@ get_meaning:
   "(#^.^#)": embarrased
   ">゜))))彡": fish
   "(^0_0^)": glasses
-  "(￣ー￣)": grining
-  "（＾ｖ＾）": happy
+  "(￣ー￣)": grinning
+  # "(￣ー￣)": grining
+  # "（＾ｖ＾）": happy
+  "(＾ｖ＾)": happy
   "(*^3^)/~☆": kiss
   "(Ｔ▽Ｔ)": sad
   "o_O": surprised
