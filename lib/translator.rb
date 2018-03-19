@@ -4,8 +4,8 @@ require "pry"
 def load_library(filename)
   emojis = YAML.load_file('lib/emoticons.yml')
   result = {
-  "get_meaning" => {},
-  "get_emoticon" => {}      
+    "get_meaning" => {},
+    "get_emoticon" => {}      
   }
   emojis.each do |definition, emoji|     
     english = emoji[0]
@@ -13,7 +13,7 @@ def load_library(filename)
     result["get_meaning"][japanese] = definition
     result["get_emoticon"][english] = japanese
   end
-result
+  result
 end
 
 def get_japanese_emoticon(filename, emoticon)
