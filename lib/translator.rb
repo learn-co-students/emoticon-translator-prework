@@ -14,10 +14,34 @@ def load_library(file_path)
 end
 
 
-def get_japanese_emoticon
-  # code goes here
+def get_japanese_emoticon(file_path, emoticon)
+  reference = load_library(file_path)
+  array = []
+  
+  reference.each {|name, emojis| emojis.each {|key, value| #puts 
+    if key == emoticon
+        array << value 
+    end }}
+ 
+  if array.empty?
+    "Sorry, that emoticon was not found"
+  else 
+    array[0]  
+  end
 end
 
-def get_english_meaning
-  # code goes here
+def get_english_meaning(file_path, emoticon )
+  reference = load_library(file_path)
+  array = []
+  
+  reference.each {|name, emojis| emojis.each {|key, value| 
+    if key == emoticon
+        array << value 
+    end }}
+ 
+  if array.empty?
+    "Sorry, that emoticon was not found"
+  else 
+    array[0]  
+  end
 end
