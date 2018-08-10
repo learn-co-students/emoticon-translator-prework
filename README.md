@@ -58,7 +58,7 @@ For instance, take this fruit YAML file:
 - Mango
 ```
 
-When Ruby loads the the YAML file above, the list of fruits would become an array:
+When Ruby loads the YAML file above, the list of fruits would become an array:
 
 ```ruby
 require "yaml"
@@ -80,7 +80,7 @@ secretary of state: John Kerry
 secretary of the treasury: Jacob Lew
 ```
 
-When Ruby loads the the YAML file above, the list of position titles and names would become a hash of keys and values:
+When Ruby loads the YAML file above, the list of position titles and names would become a hash of keys and values:
 
 ```ruby
 require "yaml"
