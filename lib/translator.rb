@@ -7,8 +7,12 @@ def load_library(file_path)
   emoticons.each do |key, array|
     english_emoticon = emoticons[key][0]
     japanese_emoticon = emoticons[key][1]
-    final_hash["get_emoticon"] = {english_emoticon => japanese_emoticon}
-    final_hash["get_meaning"] = {japanese_emoticon => key}
+    if final_hash == {}
+      final_hash = {"get_emoticon" => {english_emoticon => japanese_emoticon}, "get_meaning" => {japanese_emoticon => key}}
+    else 
+      final_hash["get_emoticon"][english_emoticon] = japanese_emoticon
+      final_hash["get_meaning"][japanese_emoticon] = key
+    end  
 # binding.pry 
   end 
 # binding.pry
@@ -16,9 +20,7 @@ def load_library(file_path)
 end
 
 
-
-
-# {"get_emoticon" =>{the keys inside the 'get_emoticon' hash are the English emoticons}, "get_meaning" => {the keys inside the 'get_meaning' hash are the Japanese emoticons}}
+# final_hash = {"get_emoticon" => {english_emoticon => japanese_emoticon}, {"get_meaning" => {japanese_emoticon => meaning}}
 
 
 
