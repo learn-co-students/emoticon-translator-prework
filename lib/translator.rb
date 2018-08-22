@@ -17,7 +17,6 @@ def load_library(file_path)
   final_hash
 end
 
-
 def get_japanese_emoticon(file_path, english_emoticon)
   emoticon_translator_hash = load_library(file_path)
   if emoticon_translator_hash["get_emoticon"][english_emoticon]
@@ -25,7 +24,6 @@ def get_japanese_emoticon(file_path, english_emoticon)
   else
     "Sorry, that emoticon was not found"
   end 
-# binding.pry
 end
 
 def get_english_meaning
