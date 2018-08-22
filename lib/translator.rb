@@ -13,15 +13,9 @@ def load_library(file_path)
       final_hash["get_emoticon"][english_emoticon] = japanese_emoticon
       final_hash["get_meaning"][japanese_emoticon] = key
     end  
-# binding.pry 
   end 
-# binding.pry
   final_hash
 end
-
-
-# final_hash = {"get_emoticon" => {english_emoticon => japanese_emoticon}, {"get_meaning" => {japanese_emoticon => meaning}}
-
 
 
 def get_japanese_emoticon
@@ -31,5 +25,3 @@ end
 def get_english_meaning
   # code goes here
 end
-
-

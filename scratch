@@ -13,14 +13,30 @@ emoticons =
  "surprised"=>[":o", "o_O"],
  "wink"=>[";)", "(^_-)"]}
  
- # final_hash should == {"get_emoticon" =>{the keys inside the 'get_emoticon' hash are the English emoticons}, "get_meaning" => {the keys inside the 'get_meaning' hash are the Japanese emoticons}}
+require "pry" 
+require "yaml"
+
+def load_library(file_path)
+  emoticons = YAML.load_file(file_path)
+  final_hash = {}
+  emoticons.each do |key, array|
+    english_emoticon = emoticons[key][0]
+    japanese_emoticon = emoticons[key][1]
+    if final_hash == {}
+      final_hash = {"get_emoticon" => {english_emoticon => japanese_emoticon}, "get_meaning" => {japanese_emoticon => key}}
+    else 
+      final_hash["get_emoticon"][english_emoticon] = japanese_emoticon
+      final_hash["get_meaning"][japanese_emoticon] = key
+    end  
+  end 
+  final_hash
+end
 
 
-final_hash = {}
-emoticons.each do |key, array|
-  English_emoticon = emoticons[key][0]
-  Japanese_emoticon = emoticons[key][1]
-  final_hash["get_emoticon"] = {English_emoticon => Japanese_emoticon}
-  final_hash["get_meaning"] = {Japanese_emoticon => English_emoticon}
-end 
-final_hash
+def get_japanese_emoticon
+  # code goes here
+end
+
+def get_english_meaning
+  # code goes here
+end
