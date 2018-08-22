@@ -1,0 +1,26 @@
+emoticons = 
+{"angel"=>["O:)", "☜(⌒▽⌒)☞"],
+ "angry"=>[">:(", "ヽ(ｏ`皿′ｏ)ﾉ"],
+ "bored"=>[":O", "(ΘεΘ;)"],
+ "confused"=>["%)", "(゜.゜)"],
+ "embarrased"=>[":$", "(#^.^#)"],
+ "fish"=>["><>", ">゜))))彡"],
+ "glasses"=>["8D", "(^0_0^)"],
+ "grinning"=>["=D", "(￣ー￣)"],
+ "happy"=>[":)", "(＾ｖ＾)"],
+ "kiss"=>[":*", "(*^3^)/~☆"],
+ "sad"=>[":'(", "(Ｔ▽Ｔ)"],
+ "surprised"=>[":o", "o_O"],
+ "wink"=>[";)", "(^_-)"]}
+ 
+ # final_hash should == {"get_emoticon" =>{the keys inside the 'get_emoticon' hash are the English emoticons}, "get_meaning" => {the keys inside the 'get_meaning' hash are the Japanese emoticons}}
+
+
+final_hash = {}
+emoticons.each do |key, array|
+  English_emoticon = emoticons[key][0]
+  Japanese_emoticon = emoticons[key][1]
+  final_hash["get_emoticon"] = {English_emoticon => Japanese_emoticon}
+  final_hash["get_meaning"] = {Japanese_emoticon => English_emoticon}
+end 
+final_hash
