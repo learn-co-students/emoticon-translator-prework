@@ -20,12 +20,12 @@ emotions
 end
 
 def get_japanese_emoticon(chase, emoji)
-  load_library(chase)
+  japanese_emoji = load_library(chase)
   YAML.load_file(chase).each do |meaning , emojis|
        emotions['get_emoticon'][emojis[0]] = emojis[1]
   
 end
-emojis[1]
+japanese_emoji
 end
 
 def get_english_meaning
