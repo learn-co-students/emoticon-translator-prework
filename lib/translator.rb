@@ -28,6 +28,10 @@ result
 
 end
 
-def get_english_meaning
-  # code goes here
+def get_english_meaning(chase, emoji)
+  english_meaning = load_library(chase)
+  result = english_meaning['get_meaning'][emoji]
+  return "Sorry, that emoticon was not found" if result.nil?
+result
+
 end
