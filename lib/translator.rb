@@ -9,12 +9,11 @@ def load_library(path)
       hash["get_emoticon"][array_of_symbols[0]] = array_of_symbols[1]
     end
   end
- # binding.pry
 hash
 end
 
 def get_japanese_emoticon(path, emoticon)
-  
+load_library(path)
 end
 
 def get_english_meaning(path, emoticon)
