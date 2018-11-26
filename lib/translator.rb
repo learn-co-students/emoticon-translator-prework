@@ -13,9 +13,25 @@ hash
 end
 
 def get_japanese_emoticon(path, emoticon)
-load_library(path)
+hash = load_library(path)
+  hash.each do |emoticons_or_meanings, emoticons|
+    emoticons.each do |key, value|
+      if emoticon == key
+        return value
+      end 
+    end
+  end
+  "Sorry, that emoticon was not found"
 end
 
 def get_english_meaning(path, emoticon)
-  
+  hash = load_library(path)
+  hash.each do |emoticons_or_meanings, emoticons|
+    emoticons.each do |key, value|
+      if emoticon == key
+        return value
+      end 
+    end
+  end
+  "Sorry, that emoticon was not found"
 end
