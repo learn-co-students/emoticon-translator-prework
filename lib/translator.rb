@@ -1,11 +1,16 @@
 # require modules here
 require "yaml"
+require 'pry'
 
 def load_library(file_path)
-  
-emoji = YAML.load_file_path(file_path)
-
-emoji
+ new_hash = {}
+emoji = YAML.load_file(file_path)
+emoji.each do |key, value|
+end
+new_hash[:get_meaning] = emoji 
+new_hash[:get_emoticon] = emoji
+new_hash
+ #binding.pry
 end
 
 def get_japanese_emoticon
