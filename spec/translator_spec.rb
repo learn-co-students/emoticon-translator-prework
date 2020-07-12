@@ -1,3 +1,4 @@
+require 'pry'
 describe "#load_library" do
 
   it "accepts one argument, the file path" do
