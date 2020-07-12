@@ -1,13 +1,39 @@
 # require modules here
+require 'yaml'
+require 'pry'
 
-def load_library
+def load_library(file_path)
   # code goes here
+  emo_yml = YAML.load_file(file_path)
+  emo_values = {"get_emoticon" => {}, "get_meaning" => {}}
+  
+  emo_yml.each do |meaning, symbols|
+    # japanese to meaning
+    emo_values["get_meaning"][symbols[1]] = meaning  
+    # english to japanese
+    emo_values["get_emoticon"][symbols[0]] = symbols[1]
+  end
+  
+  emo_values
 end
 
-def get_japanese_emoticon
+def get_japanese_emoticon(file_path, emotion)
   # code goes here
-end
+  emotion_translator = load_library(file_path)
+  if !emotion_translator["get_emoticon"][emotion]
+    return "Sorry, that emoticon was not found"
+  end 
+  
+  emotion_translator["get_emoticon"][emotion]
+end 
 
-def get_english_meaning
+def get_english_meaning(file_path, emotion)
   # code goes here
+  emotion_translator = load_library(file_path)
+  if !emotion_translator["get_meaning"][emotion]
+    return "Sorry, that emoticon was not found"
+  end 
+  
+  emotion_translator["get_meaning"][emotion]
+  
 end
